@@ -1,0 +1,69 @@
+.veg-container {
+    padding: 40px;
+    background-color: #f0fff4;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .veg-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2f855a;
+    margin-bottom: 30px;
+  }
+  
+  .veg-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .veg-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+  }
+  
+  .veg-card:hover {
+    box-shadow: 0 16px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    border: 1px solid #c6f6d5;
+    background-color: #fafffb;
+    cursor: pointer;
+  }
+  
+  .veg-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #38a169;
+  }
+  
+  .veg-price {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #4a5568;
+  }
+  
+  .add-to-cart-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #38a169, #2f855a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(56, 161, 105, 0.2);
+  }
+  
+  .add-to-cart-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(56, 161, 105, 0.4);
+    background: linear-gradient(to right, #bfc54c, #8a9433);
+  }
+  

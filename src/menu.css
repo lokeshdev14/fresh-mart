@@ -1,0 +1,90 @@
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  border-radius: 30px;
+  box-sizing: border-box;
+ 
+}
+
+.menu-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-left h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.menu-center {
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-right {
+  justify-content: flex-end;
+  gap: 3px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  background-color: goldenrod;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.cart-link {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .menu {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-section {
+    justify-content: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+  }
+}
