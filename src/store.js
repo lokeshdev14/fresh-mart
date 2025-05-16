@@ -55,9 +55,13 @@ const productSlice=createSlice({
     }
 });
 
+const savedCart = localStorage.getItem("cart");
+const localStorageCart = savedCart ? JSON.parse(savedCart) : [];
+
+
 const cartSlice=createSlice({
     name:'cart',
-    initialState:[],
+    initialState:localStorageCart,
     reducers:{
         addToCart:(state,inputItem)=>{
             const item=state.find(item=>item.name===inputItem.payload.name);
@@ -97,10 +101,12 @@ const cartSlice=createSlice({
          
     }
 });
+const savedOrders = localStorage.getItem("orders");
+const localStorageOrder = savedOrders ? JSON.parse(savedOrders) : [];
 const orderSlice = createSlice({
   name: 'orders',
   initialState: {
-    list: [],
+    list: localStorageOrder,
     nextOrderId: 1,
   },
   reducers: {
@@ -114,6 +120,8 @@ const orderSlice = createSlice({
     }
   }
 });
+
+
 export let{addToCart,removeCart,IncreamentCart,DecreamentCart,clearCart}=cartSlice.actions;
 export let{addOrder}=orderSlice.actions;
 const store=configureStore({
@@ -123,4 +131,11 @@ const store=configureStore({
         orders:orderSlice.reducer
     }
 });
+store.subscribe(()=>{
+  const state=store.getState();
+  localStorage.setItem("cart",JSON.stringify(state.cart));
+  localStorage.setItem("orders",JSON.stringify(state.orders));
+
+});
+
 export default store;

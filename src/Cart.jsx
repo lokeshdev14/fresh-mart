@@ -9,6 +9,7 @@ import QRCode from 'react-qr-code';
 
 
 function Cart() {
+  
   let cartObjects=useSelector(globalState=>globalState.cart);
   let carItems=cartObjects.map((cartItem, index) => (
     <div key={index} className="cart-card">
@@ -102,7 +103,7 @@ function Cart() {
       finalPrice: finalPrice
     };
 
-    localStorage.setItem('latestOrder', JSON.stringify(order));
+    
     dispatch(clearCart());
     setThankYouMessage(true);
 
